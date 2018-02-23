@@ -19,6 +19,8 @@ import java.io.IOException;
  */
 
 public class EndpointsAsyncTask extends AsyncTask<Context, Void, String> {
+    private static final String LOGIN_RECEIVER_FILTER = "LOGIN_RECEIVER_FILTER";
+
     private static MyApi myApiService = null;
     private Context context;
 
@@ -49,6 +51,10 @@ public class EndpointsAsyncTask extends AsyncTask<Context, Void, String> {
     protected void onPostExecute(String result) {
         Intent intent = new Intent(context , JokeActivity.class);
         intent.putExtra("Joke" , result);
+        Intent intent2 = new Intent();
+        intent2.putExtra("result"  , result);
+        intent2.setAction(LOGIN_RECEIVER_FILTER);
+        context.sendBroadcast(intent2);
         context.startActivity(intent);
     }
 }
