@@ -46,7 +46,7 @@ android {
     sourceSets {
         main {
             resources.srcDirs = ['src/main/resources']
-            java.srcDirs = ['src/main/java', 'src/androidtest/java']
+            java.srcDirs = ['src/main/java']
         }
         paid { res.srcDirs = ['src/paid/res', 'src/paid/res/'] }
         free { res.srcDirs = ['src/free/res', 'src/free/res/'] }
